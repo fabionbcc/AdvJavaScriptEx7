@@ -1,0 +1,26 @@
+# MongoDB for this course, running in Docker.
+# Everyone in the course uses the same user name and password.
+# Our Node app reads them from .env, so they must match the ones here.
+name: local-mongodb
+
+services:
+  mongodb:
+    image: mongo:8.0
+    container_name: local-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: LocalMongo_Dev2026!
+    ports:
+      # Only this computer can connect (127.0.0.1), not the rest of the network
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mongodb_data:
