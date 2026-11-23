@@ -1,0 +1,26 @@
+{
+  "name": "advjavascriptex7",
+  "version": "1.0.0",
+  "description": "1. Install **Docker Desktop** and start it.\r 2. Install **MongoDB Compass**.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabionbcc/AdvJavaScriptEx7.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/fabionbcc/AdvJavaScriptEx7/issues"
+  },
+  "homepage": "https://github.com/fabionbcc/AdvJavaScriptEx7#readme",
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "mongodb": "^7.9.1"
+  }
+}
